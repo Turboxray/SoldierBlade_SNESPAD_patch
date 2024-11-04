@@ -35,3 +35,40 @@ SNES port 2:
         The PCE controller code drives both SNES controllers (clock and latch).
         Only difference is D0 and D1.
 
+
+
+  PCE connector
+  =============
+
+    "CLR", "SEL", "D0", 5V, and Gnd map to the following pins on the PCE port:
+
+          Mini 8pin Din               Mini 8pin Din
+        (controller end)             (Console Side)
+
+          (6)  (7)    (8)             (8)  (7)    (6)
+        (3)    (4)     (5)          (5)    (4)     (4)
+            (1)    (2)                  (2)    (1)
+
+          TG16 large Din
+        (controller side)
+
+            (7)   (6)
+          (3)  (8)  (1)
+            (5)   (4)
+               (2) 
+
+    *9th pin = outside ground sheild/connector.
+
+    1 = +5V
+    2 = D0
+    3 = D1
+    4 = D2
+    5 = D3
+    6 = SEL
+    7 = CLR
+    8 = GND
+    9 = GND (shield)
+
+    Note: The above does NOT represent the internal block pad connector to the controller PCB. Different pads have different arrangements for the PCB block connector.
+          If you're using said donar cable with a block end, it would be very prudent to do a logic trace with a mult-meter first. 
+          Don't assume order, which they are known to be different from region to region and pad to pad.
